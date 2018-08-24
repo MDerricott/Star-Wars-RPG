@@ -1,5 +1,17 @@
-.game-start{
-   
+.game-start, .defender-area{
+    height: 200px;
+    background-color: blanchedalmond;
+}
+
+.ready-player-one, .defender{
+    height: 300px;
+    width: 300px;
+    background-color: pink;
+}
+
+.player-one-score, .defender.score{
+    height: 100px;;
+    background-color: aqua;
 }
 
 .hans-solo{
@@ -26,4 +38,9 @@
     width: 100px;
     background-color: gray;
     border: 1px black solid;
+}
+.attack-button{
+    background-color: aquamarine;
+    height: 50px;
+    width: 100px;
 }
