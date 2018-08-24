@@ -1,0 +1,29 @@
+.game-start{
+   
+}
+
+.hans-solo{
+    height: 100px;
+    width: 100px;
+    background-color: gray;
+    border: 1px black solid;
+}
+
+.kylo-ren{
+    height: 100px;
+    width: 100px;
+    background-color: gray;
+    border: 1px black solid;
+}
+.luke-skywalker{
+    height: 100px;
+    width: 100px;
+    background-color: gray;
+    border: 1px black solid;
+}
+.princess-leia{
+    height: 100px;
+    width: 100px;
+    background-color: gray;
+    border: 1px black solid;
+}
