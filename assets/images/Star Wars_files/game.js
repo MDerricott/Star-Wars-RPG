@@ -41,11 +41,11 @@ var hansSolo = {
     },
     score: function () {
         if (hansSolo.playerOne) {
-            $(".player-one-score").text(hansSolo.healthPoints + " HP");
+            $(".player-one-score").text(hansSolo.healthPoints);
             player = hansSolo;
         }
         else if (hansSolo.defender) {
-            $(".defender-score").text(hansSolo.healthPoints + " HP");
+            $(".defender-score").text(hansSolo.healthPoints);
             defender = hansSolo;
             attackActivate = true;
 
@@ -105,11 +105,11 @@ var klyoRen = {
     },
     score: function () {
         if (klyoRen.playerOne) {
-            $(".player-one-score").text(klyoRen.healthPoints + " HP");
+            $(".player-one-score").text(klyoRen.healthPoints);
             player = klyoRen;
 
         } else if (klyoRen.defender) {
-            $(".defender-score").text(klyoRen.healthPoints + " HP");
+            $(".defender-score").text(klyoRen.healthPoints);
             defender = klyoRen;
             attackActivate = true;
 
@@ -135,7 +135,7 @@ var klyoRen = {
 
 var lukeSkywalker = {
     name: "Luke Skywalker",
-    healthPoints: 140,
+    healthPoints: 120,
     attackPower: 10,
     basePower: 10,
     counterAttackPower: 16,
@@ -169,11 +169,11 @@ var lukeSkywalker = {
     },
     score: function () {
         if (lukeSkywalker.playerOne) {
-            $(".player-one-score").text(lukeSkywalker.healthPoints + " HP");
+            $(".player-one-score").text(lukeSkywalker.healthPoints);
             player = lukeSkywalker;
         }
         else if (lukeSkywalker.defender) {
-            $(".defender-score").text(lukeSkywalker.healthPoints + " HP");
+            $(".defender-score").text(lukeSkywalker.healthPoints);
             defender = lukeSkywalker;
             attackActivate = true;
         }
@@ -198,7 +198,7 @@ var lukeSkywalker = {
 
 var princessLeia = {
     name: "Princess Leia",
-    healthPoints: 160,
+    healthPoints: 140,
     basePower: 13,
     attackPower: 13,
     counterAttackPower: 17,
@@ -233,12 +233,12 @@ var princessLeia = {
     },
     score: function () {
         if (princessLeia.playerOne) {
-            $(".player-one-score").text(princessLeia.healthPoints  + " HP");
+            $(".player-one-score").text(princessLeia.healthPoints);
             player = princessLeia;
 
         }
         else if (princessLeia.defender) {
-            $(".defender-score").text(princessLeia.healthPoints + " HP");
+            $(".defender-score").text(princessLeia.healthPoints);
             defender = princessLeia;
             attackActivate = true;
         }
@@ -287,8 +287,8 @@ var attackMode = function () {
             console.log("playing p hp" + player.healthPoints);
             console.log("playing d ca" + defender.counterAttackPower);
             console.log("playing p ap" + player.attackPower);
-            $(".defender-score").text(defender.healthPoints + " HP");
-            $(".player-one-score").text(player.healthPoints + " HP");
+            $(".defender-score").text(defender.healthPoints);
+            $(".player-one-score").text(player.healthPoints);
             $(".battle-notes1").text("  You attacked " + defender.name + " for " + player.attackPower + " damage!");
             $(".battle-notes2").text("  " + defender.name + " attacked you for " + defender.counterAttackPower + " damage!");
             player.powerUp();
@@ -299,7 +299,6 @@ var attackMode = function () {
                 console.log("defeated play hp " + player.healthPoints);
                 console.log("deafeated def ca" + defender.counterAttackPower);
                 console.log("defeated play ap " + player.attackPower);
-                attackActivate = false;
                 $(".battle-notes1").append("  You have been defeated.");
                 $(".battle-notes2").empty();
                 $(".battle-notes2").append('<div class="reset">');
@@ -316,7 +315,6 @@ var attackMode = function () {
                 console.log("Winning p hp" + player.healthPoints);
                 console.log("Winning d ca" + defender.counterAttackPower);
                 console.log("Winning p ap " + player.attackPower);
-                attackActivate = false;
                 $("#to-defend").remove()
                 $(".defender-score").empty();
                 defenderReady = true;
@@ -333,7 +331,7 @@ var attackMode = function () {
                 }
 
                 else {
-                    $(".battle-notes1").append("  Select your new defender!");
+                    $(".battle-notes1").append("Select your new defender!");
                     $(".battle-notes2").empty();
                 }
             }
@@ -343,7 +341,7 @@ var attackMode = function () {
 }
 
 
-$(".battle-notes1").text("  Select your Character and Defender!");
+
 hansSolo.position();
 klyoRen.position();
 princessLeia.position();
@@ -353,5 +351,8 @@ hansSolo.showOff();
 princessLeia.showOff();
 lukeSkywalker.showOff();
 attackMode();
+
+
+
 
 

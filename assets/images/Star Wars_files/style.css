@@ -4,8 +4,7 @@
     /* background-color: blanchedalmond; */
 }
 body{
-    background-image: url("../images/galaxy.jpg");
-    font-family: 'Fjalla One', sans-serif;
+    background-image: url("../images/galaxy.jpg")
 }
 img{
     height: 225px;
@@ -34,7 +33,7 @@ img{
     height: 25px;
     width: 225px;
     position: relative;
-    background-color: rgb(85, 19, 8);
+    background-color: rgb(44, 17, 17);
     top: 190px;
     color: white;
     text-align: center;
@@ -45,31 +44,25 @@ img{
 .ready-player-one, .defender{
     height: 225px;
     width:  400px;
-    background-color: rgb(85, 61, 49);
+    background-color: pink;
     position: relative;
     /* margin: 5px; */
 }
 
 .player-one-score, .defender-score{
-    height: 50px;
-    width: 200px;
-    background-color: rgb(133, 107, 107);
-    text-align: center;
-    line-height: 50px;
-    font-size: 25px;
-    
+    height: 100px;;
+    background-color: aqua;
 }
 
-.attack-button, .reset{
-    background-color: rgb(73, 38, 38);
+.attack-button{
+    background-color: black;
     height: 50px;
     width: 130px;
     position: relative;
-    top:75px;
+    top:150px;
     color: white;
     text-align: center;
     line-height: 50px;
 }
-
 
 

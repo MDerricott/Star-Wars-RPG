@@ -18,39 +18,53 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
 </head>
 
 <body>
 
    <div class= "container">
-        <div class="row game-start">
-            <div class="hans-solo">Hans solo</div>
-            <div class="kylo-ren">kylo ren</div>
-            <div class="luke-skywalker">luke skywalker</div>
-            <div class="princess-leia">princess leia</div>
+        <div class="row game-start d-flex justify-content-center">
+            <div class="hans-solo">
+                <div class = "hsshow-off"></div>
+                <img class"reimage" src="assets/images/Han.jpg"/>
+            </div>
+            <div class="kylo-ren">
+                <div class = "krshow-off"></div>
+                <img class"reimage" src="assets/images/Kylo.png"/>
+            </div>
+            <div class="luke-skywalker">
+                <div class = "lsshow-off redo"></div>
+                <img class"reimage" src="assets/images/luke.jpg"/>
+            </div>
+            <div class="princess-leia">
+                 <div class = "plshow-off redo"></div>
+                <img class"reimage" src="assets/images/leia.jpg"/>
+            </div>
+
         </div>
         <div class="row">
-            <div class="col-sm-6 player-one-score">
+            <div class="col-sm-6 player-one-score d-flex justify-content-center">
                 
             </div>
-            <div class="col-sm-6 defender-score">
+            <div class="col-sm-6 defender-score d-flex justify-content-center">
 
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-5 ready-player-one">
+            <div class="col-sm-5 ready-player-one d-flex justify-content-center">
 
             </div>
-            <div class="col-sm-1">
-                <div class="attack-button">Attack</div>
+            <div class="col-sm-2">
+                <div class="attack-button"><b>ATTACK!</b></div>                                                                                                                                                                                                                                                                                                                                      
             </div>
-            <div class="col-sm-5 defender">
+            <div class="col-sm-5 defender d-flex justify-content-center">
 
             </div>
         </div>
         <div class="row battle-notes1"></div>
         <div class="row battle-notes2"></div>
-        <div class="row defender-area">
+        <div class="row defender-area d-flex justify-content-center">
         </div>
 
 
