@@ -223,60 +223,61 @@ function moveToDefend() {
 }
 var attackMode = function () {
     $(".attack-button").on("click", function () {
-        (defender.healthPoints > 0 && player.healthPoints > 0)
-        defender.healthPoints -= player.attackPower;
-        player.healthPoints -= defender.counterAttackPower;
-        console.log("playing d hp" + defender.healthPoints);
-        console.log("playing p hp" + player.healthPoints);
-        console.log("playing d ca" + defender.counterAttackPower);
-        console.log("playing p ap" + player.attackPower);
-        $(".defender-score").text(defender.healthPoints);
-        $(".player-one-score").text(player.healthPoints);
-        $(".battle-notes1").text("You attacked " + defender.name + " for " + player.attackPower + " damage!");
-        $(".battle-notes2").text(defender.name + " attacked you for " + defender.counterAttackPower + " damage!");
-        player.powerUp();
-        attackActivate = false;
+        if (attackActivate) {
+            (defender.healthPoints > 0 && player.healthPoints > 0)
+            defender.healthPoints -= player.attackPower;
+            player.healthPoints -= defender.counterAttackPower;
+            console.log("playing d hp" + defender.healthPoints);
+            console.log("playing p hp" + player.healthPoints);
+            console.log("playing d ca" + defender.counterAttackPower);
+            console.log("playing p ap" + player.attackPower);
+            $(".defender-score").text(defender.healthPoints);
+            $(".player-one-score").text(player.healthPoints);
+            $(".battle-notes1").text("You attacked " + defender.name + " for " + player.attackPower + " damage!");
+            $(".battle-notes2").text(defender.name + " attacked you for " + defender.counterAttackPower + " damage!");
+            player.powerUp();
+           
 
-        if (player.healthPoints <= 0 && (defender.healthPoints > 0 || defender.healthPoints < 0)) {
-            console.log("defeated def hp " + defender.healthPoints);
-            console.log("defeated play hp " + player.healthPoints);
-            console.log("deafeated def ca" + defender.counterAttackPower);
-            console.log("defeated play ap " + player.attackPower);
-            $(".battle-notes1").append("You have been defeated");
-            $(".battle-notes2").empty();
-            $(".battle-notes2").append('<div class="reset">');
-            $(".reset").text("Reset Game");
-            $(".reset").on("click", function () {
-                location.reload();
-                attackActivate = false;
-            });
-
-        }
-        else if (defender.healthPoints <= 0 && player.healthPoints > 0) {
-            player.attackPower -= player.basePower;
-            console.log("Winning d hp" + defender.healthPoints);
-            console.log("Winning p hp" + player.healthPoints);
-            console.log("Winning d ca" + defender.counterAttackPower);
-            console.log("Winning p ap " + player.attackPower);
-            $("#to-defend").remove()
-            $(".defender-score").empty();
-            defenderReady = true;
-            winningMoves--;
-            attackActivate = false;
-            if (winningMoves === 0) {
-                $(".battle-notes1").append("You win the Game!");
+            if (player.healthPoints <= 0 && (defender.healthPoints > 0 || defender.healthPoints < 0)) {
+                console.log("defeated def hp " + defender.healthPoints);
+                console.log("defeated play hp " + player.healthPoints);
+                console.log("deafeated def ca" + defender.counterAttackPower);
+                console.log("defeated play ap " + player.attackPower);
+                $(".battle-notes1").append("You have been defeated");
                 $(".battle-notes2").empty();
                 $(".battle-notes2").append('<div class="reset">');
                 $(".reset").text("Reset Game");
                 $(".reset").on("click", function () {
                     location.reload();
+              
                 });
+
             }
-        
-            else {
-                $(".battle-notes1").append("Select your new defender!");
-                attackActivate = false;
-                $(".battle-notes2").empty();
+            else if (defender.healthPoints <= 0 && player.healthPoints > 0) {
+                player.attackPower -= player.basePower;
+                console.log("Winning d hp" + defender.healthPoints);
+                console.log("Winning p hp" + player.healthPoints);
+                console.log("Winning d ca" + defender.counterAttackPower);
+                console.log("Winning p ap " + player.attackPower);
+                $("#to-defend").remove()
+                $(".defender-score").empty();
+                defenderReady = true;
+                winningMoves--;
+                
+                if (winningMoves === 0) {
+                    $(".battle-notes1").append("You win the Game!");
+                    $(".battle-notes2").empty();
+                    $(".battle-notes2").append('<div class="reset">');
+                    $(".reset").text("Reset Game");
+                    $(".reset").on("click", function () {
+                        location.reload();
+                    });
+                }
+
+                else {
+                    $(".battle-notes1").append("Select your new defender!");
+                    $(".battle-notes2").empty();
+                }
             }
         }
     });
@@ -292,7 +293,6 @@ lukeSkywalker.position();
 
 attackMode();
 
-console.log(player);
 
 
 
